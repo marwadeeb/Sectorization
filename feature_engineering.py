@@ -1,9 +1,7 @@
-<<<<<<< HEAD
 import pandas as pd 
 from sklearn import model_selection
 from sklearn.feature_extraction.text import TfidfVectorizer, CountVectorizer
 import time
-=======
 import pandas as pd
 import time
 from sklearn import model_selection
