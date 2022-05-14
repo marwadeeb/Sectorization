@@ -1,9 +1,7 @@
-<<<<<<< HEAD
 import pandas as pd 
 from sklearn import model_selection
 from sklearn.feature_extraction.text import TfidfVectorizer, CountVectorizer
 import time
-=======
 import pandas as pd
 import time
 from sklearn import model_selection
@@ -16,7 +14,6 @@ def convert_dtype(x):
         return str(x)
     except:        
         return ''
-
 
 # start time
 start = time.time()
@@ -46,8 +43,11 @@ for category in categories:
     bow.append(content)
 X = vectorizer.fit_transform(bow)
 
-
-
+## apply tfidf vectorizer 
+X = vectorizer.fit_transform(bow)
+tfidf_vectorizer = TfidfVectorizer(max_df=0.8, min_df=0.2)
+X_train = tfidf_vectorizer.fit_transform(bow) 
+X_names = tfidf_vectorizer.get_feature_names_out()
 
 end = time.time()
 print(end-start)
